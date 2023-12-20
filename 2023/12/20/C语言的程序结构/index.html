@@ -16,24 +16,23 @@
   <meta name="author" content="Sunday Am">
   <meta name="keywords" content="">
   
-    <meta name="description" content="笔者上的第一节编程课就是用C语言写一段输出“Hello World”的代码，在很多的教学书籍中，第一章也是从“Hello World”开始。我希望大家一直都保持着“Hello World”的激情，无论是生活还是学习。">
+    <meta name="description" content="笔者将会在本文中介绍C语言的程序结构，也就是C语言程序是由什么构成。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="C Language Says Hello World">
-<meta property="og:url" content="http://example.com/2023/12/18/HelloWorld/index.html">
+<meta property="og:title" content="C语言的程序结构">
+<meta property="og:url" content="http://example.com/2023/12/20/C%E8%AF%AD%E8%A8%80%E7%9A%84%E7%A8%8B%E5%BA%8F%E7%BB%93%E6%9E%84/index.html">
 <meta property="og:site_name" content="SundayAm&#39;s Blog">
-<meta property="og:description" content="笔者上的第一节编程课就是用C语言写一段输出“Hello World”的代码，在很多的教学书籍中，第一章也是从“Hello World”开始。我希望大家一直都保持着“Hello World”的激情，无论是生活还是学习。">
+<meta property="og:description" content="笔者将会在本文中介绍C语言的程序结构，也就是C语言程序是由什么构成。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-12-18T13:47:19.000Z">
-<meta property="article:modified_time" content="2023-12-20T08:36:40.969Z">
+<meta property="article:published_time" content="2023-12-20T09:54:10.770Z">
+<meta property="article:modified_time" content="2023-12-20T14:56:55.210Z">
 <meta property="article:author" content="Sunday Am">
 <meta property="article:tag" content="C Language">
 <meta property="article:tag" content="Programming">
-<meta property="article:tag" content="Hello World">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>C Language Says Hello World - SundayAm&#39;s Blog</title>
+  <title>C语言的程序结构 - SundayAm&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -240,7 +239,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="C Language Says Hello World"></span>
+            <span id="subtitle" data-typed-text="C语言的程序结构"></span>
           
         </div>
 
@@ -256,8 +255,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-12-18 21:47" pubdate>
-          2023年12月18日 晚上
+        <time datetime="2023-12-20 17:54" pubdate>
+          2023年12月20日 下午
         </time>
       </span>
     
@@ -268,7 +267,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          840 字
+          487 字
         
       </span>
     
@@ -279,7 +278,7 @@
         
         
         
-          8 分钟
+          5 分钟
         
       </span>
     
@@ -324,12 +323,12 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">C Language Says Hello World</h1>
+            <h1 id="seo-header">C语言的程序结构</h1>
             
               <p id="updated-time" class="note note-info" style="">
                 
                   
-                    本文最后更新于 2023年12月20日 下午
+                    本文最后更新于 2023年12月20日 晚上
                   
                 
               </p>
@@ -337,54 +336,62 @@
             
               <div class="markdown-body">
                 
-                <h1 id="🗿Hello-World"><a href="#🗿Hello-World" class="headerlink" title="🗿Hello World!"></a>🗿Hello World!</h1><blockquote>
-<p>笔者会先展示代码，再分析它的构成。我们即将踏进一个伟大编程语言的世界！</p>
+                <h1 id="🗿-程序结构"><a href="#🗿-程序结构" class="headerlink" title="🗿 程序结构"></a>🗿 程序结构</h1><h2 id="📚-Introduce"><a href="#📚-Introduce" class="headerlink" title="📚  Introduce"></a>📚  Introduce</h2><p>在C语言中，程序主要包括：</p>
+<ul>
+<li><a href="#header">头文件（Header Files）</a></li>
+<li><a href="#preprocessor">预处理指令（Preprocessor Directives）</a></li>
+<li><a href="#global">全局声明（Global Declarations）</a></li>
+<li><a href="#main">main函数（main function）</a></li>
+<li><a href="#local">局部声明（Local Declarations）</a></li>
+<li><a href="#statement">语句和表达式（Statements and Expressions）</a></li>
+<li><a href="#control">控制结构（Control Structures）</a></li>
+<li><a href="#definition">函数定义（Function Definitions）</a></li>
+</ul>
+<h2 id="📖-Code"><a href="#📖-Code" class="headerlink" title="📖 Code"></a>📖 Code</h2><blockquote>
+<p>下面是一个简单的C语言程序示例：</p>
 </blockquote>
-<h2 id="📖-Code"><a href="#📖-Code" class="headerlink" title="📖 Code"></a>📖 Code</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;stdio.h&gt;</span></span><br><br><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">()</span><br>&#123;<br>    <span class="hljs-comment">/*Here is my code*/</span><br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;Hello World!\n&quot;</span>);<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdio.h&gt;</span></span><br><br><span class="hljs-type">void</span> <span class="hljs-title function_">greet</span><span class="hljs-params">(<span class="hljs-type">void</span>)</span>;  <span class="hljs-comment">// 函数原型声明</span><br><br><span class="hljs-type">int</span> globalVar = <span class="hljs-number">10</span>;  <span class="hljs-comment">// 全局变量声明</span><br><br><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">()</span> <br>&#123;<br>    <span class="hljs-type">int</span> localVar = <span class="hljs-number">5</span>;  <span class="hljs-comment">// 局部变量声明</span><br><br>    greet();  <span class="hljs-comment">// 调用函数</span><br><br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;Sum: %d\n&quot;</span>, globalVar + localVar);  <span class="hljs-comment">// 执行语句和表达式</span><br><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br><br><span class="hljs-comment">// 函数定义</span><br><span class="hljs-type">void</span> <span class="hljs-title function_">greet</span><span class="hljs-params">(<span class="hljs-type">void</span>)</span> <br>&#123;<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;Hello, World!\n&quot;</span>);<br>&#125;<br></code></pre></td></tr></table></figure>
 
-<h2 id="📝-Explain"><a href="#📝-Explain" class="headerlink" title="📝 Explain"></a>📝 Explain</h2><ol>
-<li><p><code>#include&lt;stdio.h&gt;</code></p>
-<ul>
-<li><code>#include</code>是一个预处理命令，用来引入头文件</li>
-<li><code>stdio.h</code>是一个头文件（标准输入输出文件）</li>
-</ul>
-<p> 简单来说，头文件相当于一个工具箱，我们选择需要使用的工具箱，这样就可以在我们之后的工作（代码）中进行使用</p>
-</li>
-<li><p><code>int main() &#123;&#125;</code></p>
-<ul>
-<li><code>int</code>表示该<code>main()</code>函数的返回类型是整型数据，在数据类型以及函数章节会详细介绍。</li>
-<li><code>main()</code>表示一个名为<code>main</code>的函数，在函数章节会函数章节会详细介绍。</li>
-<li><code>&#123;&#125;</code>表示函数的代码块，描述的是函数的功能</li>
-</ul>
-<p> &#x3D;&#x3D;提醒：在C语言中，所有的程序都要包含<code>main()</code>函数，代码从<code>main</code>函数执行。&#x3D;&#x3D;</p>
-</li>
-<li><p><code>/*Here is my code*/</code></p>
-<ul>
-<li><code>/**/</code>包含的是注释说明，程序不会执行，可以有效提高代码的可读性。</li>
-</ul>
-</li>
-<li><p><code>printf(&quot;Hello World!\n&quot;);</code></p>
-<ul>
-<li><p><code>printf()</code>函数在<code>stdio.h</code>头文件中声明，用于格式化输出到屏幕。</p>
-</li>
-<li><p><code>&quot;Hello World!\n&quot;</code>是一串字符串，<code>\n</code>是转义字符，表示换行。</p>
-</li>
-<li><p>在C语言中，每个语句都要使用语句结束符（分号<code>;</code>）作为结束标志。</p>
-</li>
-<li><p><code>retrun 0;</code>对应返回类型。在这里，返回类型是<code>int</code>，所以返回一个0表示退出程序。</p>
-</li>
-</ul>
-</li>
-</ol>
-<h2 id="📽️-History"><a href="#📽️-History" class="headerlink" title="📽️ History"></a>📽️ History</h2><p>C语言是一门通用的、过程式编程语言，由美国计算机科学家Dennis Ritchie于1972年至1973年之间在贝尔实验室（Bell Labs）设计和实现。以下是C语言的主要历史里程碑：</p>
-<ol>
-<li><strong>起源和发展：</strong> C语言的设计始于1969年，当时Dennis Ritchie和Ken Thompson在贝尔实验室为新的Unix操作系统开发一种新的高级编程语言。C语言是由B语言演变而来，而B语言又是由BCPL语言演变而来。因此，C语言继承了一些B语言的特性，但也引入了新的概念和语法。</li>
-<li><strong>发布：</strong> C语言首次正式亮相是在1972年，当时Dennis Ritchie与Brian Kernighan合作，在《贝尔系统技术杂志》上发表了一篇名为《The C Programming Language》的文章，介绍了C语言的基本概念和语法。</li>
-<li><strong>C语言的标准化：</strong> 随着C语言的发展，为了促进跨平台和可移植性，于1983年发布了第一个C语言标准，即ANSI C（American National Standards Institute C）。后来，国际标准化组织（ISO）也发布了与ANSI C兼容的标准，被称为ISO C。</li>
-<li><strong>流行和广泛应用：</strong> 由于其简洁、高效和可移植的特性，C语言在计算机科学领域变得非常流行。它成为了许多系统软件、嵌入式系统和底层编程的首选语言。许多其他编程语言（如C++、Objective-C、C#等）都受到了C语言的影响。</li>
-<li><strong>发展为C++：</strong> 在C语言的基础上，Bjarne Stroustrup于1983年推出了C++，将面向对象编程的概念引入了C语言，使之成为一门更为强大和灵活的编程语言。</li>
-</ol>
-<p>C语言的影响深远，它不仅是许多其他编程语言的基础，而且仍然在系统编程、嵌入式系统和底层开发领域保持着强大的地位。</p>
+<h2 id="📝-Explain"><a href="#📝-Explain" class="headerlink" title="📝 Explain"></a>📝 Explain</h2><div class="note note-info">
+            <p><a id="header" style="text-decoration: none;color: inherit;">头文件（Header Files）</a></p>
+          </div>
+
+<p>头文件包含了一些预处理指令，用于引入系统库或自定义库的声明。例如，<code>#include &lt;stdio.h&gt;</code>用于引入标准输入输出库。</p>
+<div class="note note-info">
+            <p><a id="preprocessor" style="text-decoration: none;color: inherit;">预处理指令（Preprocessor Directives）</a></p>
+          </div>
+
+<p>在头文件中，通常包含一些预处理指令，如<code>#define</code>、<code>#ifdef</code>、<code>#ifndef</code>等。这些指令在编译前由预处理器处理。</p>
+<div class="note note-info">
+            <p><a id="gloal" style="text-decoration: none;color: inherit;">全局声明（Global Declarations）</a></p>
+          </div>
+
+<p>在主函数之外声明全局变量和函数原型。全局变量和函数原型的声明可以放在头文件中。</p>
+<div class="note note-info">
+            <p><a id="main" style="text-decoration: none;color: inherit;">main函数（main function）</a></p>
+          </div>
+
+<p>所有的C程序都必须包含一个<code>main</code>函数，它是程序的入口。程序从<code>main</code>函数开始执行。</p>
+<div class="note note-info">
+            <p><a id="local" style="text-decoration: none;color: inherit;">局部声明（Local Declarations）</a></p>
+          </div>
+
+<p>在<code>main</code>函数或其他函数内部，可以声明局部变量。局部变量只在声明它的函数内部可见。</p>
+<div class="note note-info">
+            <p><a id="statement" style="text-decoration: none;color: inherit;">语句和表达式（Statements and Expressions）</a></p>
+          </div>
+
+<p>C程序由一系列语句和表达式组成。语句是执行某种操作的代码块，而表达式则是产生一个值的代码片段。</p>
+<div class="note note-info">
+            <p><a id="control" style="text-decoration: none;color: inherit;">控制结构（Control Structures）</a></p>
+          </div>
+
+<p>C语言提供了一些控制结构，如条件语句（<code>if</code>、<code>else</code>）、循环语句（<code>for</code>、<code>while</code>）和跳转语句（<code>break</code>、<code>continue</code>、<code>return</code>）。</p>
+<div class="note note-info">
+            <p><a id="definition" style="text-decoration: none;color: inherit;">函数定义（Function Definitions）</a></p>
+          </div>
+
+<p>除了<code>main</code>函数之外，程序可能包含其他自定义函数。函数的定义包括函数名、返回类型、参数列表和函数体。</p>
 
                 
               </div>
@@ -429,8 +436,6 @@
       
         <a href="/tags/Programming/" class="print-no-link">#Programming</a>
       
-        <a href="/tags/Hello-World/" class="print-no-link">#Hello World</a>
-      
     </div>
   
 </div>
@@ -441,8 +446,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>C Language Says Hello World</div>
-      <div>http://example.com/2023/12/18/HelloWorld/</div>
+      <div>C语言的程序结构</div>
+      <div>http://example.com/2023/12/20/C语言的程序结构/</div>
     </div>
     <div class="license-meta">
       
@@ -454,7 +459,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年12月18日</div>
+          <div>2023年12月20日</div>
         </div>
       
       
@@ -495,8 +500,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/12/18/hello-world/" title="Hello World">
-                        <span class="hidden-mobile">Hello World</span>
+                      <a href="/2023/12/18/CHelloWorld/" title="C Language Says Hello World">
+                        <span class="hidden-mobile">C Language Says Hello World</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -511,6 +516,29 @@
   
     <article id="comments" lazyload>
       
+  <div id="waline"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#waline', function() {
+      Fluid.utils.createCssLink('https://cdn.staticfile.org/waline/2.15.5/waline.min.css')
+      Fluid.utils.createScript('https://cdn.staticfile.org/waline/2.15.5/waline.min.js', function() {
+        var options = Object.assign(
+          {"serverURL":"https://ntms7a6b.lc-cn-n1-shared.com","path":"window.location.pathname","meta":["nick","mail","link"],"requiredMeta":["nick"],"lang":"zh-CN","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo"],"dark":"html[data-user-color-scheme=\"dark\"]","wordLimit":0,"pageSize":10},
+          {
+            el: '#waline',
+            path: window.location.pathname
+          }
+        )
+        Waline.init(options);
+        Fluid.utils.waitElementVisible('#waline .vcontent', () => {
+          var imgSelector = '#waline .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
 
     </article>
   
@@ -608,7 +636,7 @@
     <div class="footer-inner">
   
     <div class="footer-content">
-       <span>Powered By</span> <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <span> & </span> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <br> <span>Sunday Am</span> <span>ⓒ</span> <span>2023-2024</span> 
+       <span>Powered By</span> <a href="https://hexo.io" target="_blank" rel="nofollow noopener">Hexo</a> <span> & </span> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener">Fluid</a> <span> 🪐 Sunday Am ⓒ 2023-2024</span> 
     </div>
   
   
