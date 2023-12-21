@@ -16,24 +16,23 @@
   <meta name="author" content="Sunday Am">
   <meta name="keywords" content="">
   
-    <meta name="description" content="笔者上的第一节编程课就是用C语言写一段输出“Hello World”的代码，在很多的教学书籍中，第一章也是从“Hello World”开始。我希望大家一直都保持着“Hello World”的激情，无论是生活还是学习。">
+    <meta name="description" content="笔者将会在这篇文章中介绍C语言的其他基本的构建块，包括令牌（Token）、语句结束符、注释、标识符和关键字。这些是我们开始学习编写C语言程序代码的基础。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="C Language Says Hello World">
-<meta property="og:url" content="http://example.com/2023/12/18/CHelloWorld/index.html">
+<meta property="og:title" content="C语言的基本语法">
+<meta property="og:url" content="http://example.com/2023/12/21/C%E8%AF%AD%E8%A8%80%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/index.html">
 <meta property="og:site_name" content="SundayAm&#39;s Blog">
-<meta property="og:description" content="笔者上的第一节编程课就是用C语言写一段输出“Hello World”的代码，在很多的教学书籍中，第一章也是从“Hello World”开始。我希望大家一直都保持着“Hello World”的激情，无论是生活还是学习。">
+<meta property="og:description" content="笔者将会在这篇文章中介绍C语言的其他基本的构建块，包括令牌（Token）、语句结束符、注释、标识符和关键字。这些是我们开始学习编写C语言程序代码的基础。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-12-18T13:47:19.000Z">
-<meta property="article:modified_time" content="2023-12-20T08:36:40.969Z">
+<meta property="article:published_time" content="2023-12-21T02:55:44.000Z">
+<meta property="article:modified_time" content="2023-12-21T03:31:36.412Z">
 <meta property="article:author" content="Sunday Am">
 <meta property="article:tag" content="C Language">
 <meta property="article:tag" content="Programming">
-<meta property="article:tag" content="Hello World">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>C Language Says Hello World - SundayAm&#39;s Blog</title>
+  <title>C语言的基本语法 - SundayAm&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -240,7 +239,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="C Language Says Hello World"></span>
+            <span id="subtitle" data-typed-text="C语言的基本语法"></span>
           
         </div>
 
@@ -256,8 +255,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-12-18 21:47" pubdate>
-          2023年12月18日 晚上
+        <time datetime="2023-12-21 10:55" pubdate>
+          2023年12月21日 上午
         </time>
       </span>
     
@@ -268,7 +267,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          840 字
+          970 字
         
       </span>
     
@@ -279,7 +278,7 @@
         
         
         
-          8 分钟
+          9 分钟
         
       </span>
     
@@ -324,12 +323,12 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">C Language Says Hello World</h1>
+            <h1 id="seo-header">C语言的基本语法</h1>
             
               <p id="updated-time" class="note note-info" style="">
                 
                   
-                    本文最后更新于 2023年12月20日 下午
+                    本文最后更新于 2023年12月21日 中午
                   
                 
               </p>
@@ -337,54 +336,170 @@
             
               <div class="markdown-body">
                 
-                <h1 id="🗿Hello-World"><a href="#🗿Hello-World" class="headerlink" title="🗿Hello World!"></a>🗿Hello World!</h1><blockquote>
-<p>笔者会先展示代码，再分析它的构成。我们即将踏进一个伟大编程语言的世界！</p>
-</blockquote>
-<h2 id="📖-Code"><a href="#📖-Code" class="headerlink" title="📖 Code"></a>📖 Code</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;stdio.h&gt;</span></span><br><br><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">()</span><br>&#123;<br>    <span class="hljs-comment">/*Here is my code*/</span><br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;Hello World!\n&quot;</span>);<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+                <h1 id="🗿-基本语法"><a href="#🗿-基本语法" class="headerlink" title="🗿 基本语法"></a>🗿 基本语法</h1><h2 id="🗝️-C的令牌（Token）"><a href="#🗝️-C的令牌（Token）" class="headerlink" title="🗝️ C的令牌（Token）"></a>🗝️ C的令牌（Token）</h2><div class="note note-info">
+            <p>在C语言中，令牌是构成程序的基本元素，可以理解为最小的语法单位。C语言中的令牌包括关键字、标识符、常量、字符串文字、运算符和特殊符号等。</p>
+          </div>
+<ul>
+<li><strong>关键字（Keywords）：</strong>C语言中有一些具有特殊含义的单词，它们是语言的一部分，不能用作标识符。例如，int、if、else等。</li>
+<li><strong>标识符（Identifiers）：</strong>标识符是由字母、数字和下划线组成的名称，用于标识变量、函数等。标识符需要遵循一些命名规则，比如不能以数字开头。</li>
+<li><strong>常量（Constants）：</strong>常量是固定的值，分为整数常量、浮点数常量、字符常量等。</li>
+<li><strong>字符串文字（String Literals）：</strong>字符串文字是由字符组成的序列，用双引号括起来。</li>
+<li><strong>运算符（Operators）：</strong>运算符用于执行各种操作，如加法、减法、乘法、除法等。</li>
+<li><strong>特殊符号（Special Symbols）：</strong>括花括号{}，方括号[]，括号()，分号;等。</li>
+</ul>
+<h2 id="📜-注释"><a href="#📜-注释" class="headerlink" title="📜 注释"></a>📜 注释</h2><p>C语言有两种注释方式</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-comment">// 单行注释</span><br><br><span class="hljs-comment">/* 单行注释 */</span><br><br><span class="hljs-comment">/*</span><br><span class="hljs-comment">  多行注释</span><br><span class="hljs-comment">  多行注释</span><br><span class="hljs-comment">  多行注释</span><br><span class="hljs-comment"> */</span><br></code></pre></td></tr></table></figure>
+<p>注意：不能在注释内嵌套注释，注释也不能出现在字符串或字符值中</p>
+<h2 id="🖇️-标识符"><a href="#🖇️-标识符" class="headerlink" title="🖇️ 标识符"></a>🖇️ 标识符</h2><p>C 标识符是用来标识变量、函数，或任何其他用户自定义项目的名称。</p>
+<ul>
+<li><em><strong>以字母<code>A-Z</code>或<code>a-z</code>或下划线<code>_</code>开始</strong></em></li>
+<li><em><strong>只能由字母、数字、下划线组成</strong></em></li>
+<li><em><strong>不允许出现标点符号，比如@、$和%等</strong></em></li>
+<li><em><strong>C语言是区分大小写的编程语言</strong></em></li>
+</ul>
+<h2 id="📌-关键字"><a href="#📌-关键字" class="headerlink" title="📌 关键字"></a>📌 关键字</h2><table>
+<thead>
+<tr>
+<th>关键字</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>auto</td>
+<td>声明自动变量</td>
+</tr>
+<tr>
+<td>break</td>
+<td>跳出当前循环</td>
+</tr>
+<tr>
+<td>case</td>
+<td>开关语句分支</td>
+</tr>
+<tr>
+<td>char</td>
+<td>声明字符型变量或函数返回值类型</td>
+</tr>
+<tr>
+<td>const</td>
+<td>定义常量，如果一个变量被 const 修饰，那么它的值就不能再被改变</td>
+</tr>
+<tr>
+<td>continue</td>
+<td>结束当前循环，开始下一轮循环</td>
+</tr>
+<tr>
+<td>default</td>
+<td>开关语句中的”其它”分支</td>
+</tr>
+<tr>
+<td>do</td>
+<td>循环语句的循环体</td>
+</tr>
+<tr>
+<td>double</td>
+<td>声明双精度浮点型变量或函数返回值类型</td>
+</tr>
+<tr>
+<td>else</td>
+<td>条件语句否定分支（与 if 连用）</td>
+</tr>
+<tr>
+<td>enum</td>
+<td>声明枚举类型</td>
+</tr>
+<tr>
+<td>extern</td>
+<td>声明变量或函数是在其它文件或本文件的其他位置定义</td>
+</tr>
+<tr>
+<td>float</td>
+<td>声明浮点型变量或函数返回值类型</td>
+</tr>
+<tr>
+<td>for</td>
+<td>一种循环语句</td>
+</tr>
+<tr>
+<td>goto</td>
+<td>无条件跳转语句</td>
+</tr>
+<tr>
+<td>if</td>
+<td>条件语句</td>
+</tr>
+<tr>
+<td>int</td>
+<td>声明整型变量或函数</td>
+</tr>
+<tr>
+<td>long</td>
+<td>声明长整型变量或函数返回值类型</td>
+</tr>
+<tr>
+<td>register</td>
+<td>声明寄存器变量</td>
+</tr>
+<tr>
+<td>return</td>
+<td>子程序返回语句（可以带参数，也可不带参数）</td>
+</tr>
+<tr>
+<td>short</td>
+<td>声明短整型变量或函数</td>
+</tr>
+<tr>
+<td>signed</td>
+<td>声明有符号类型变量或函数</td>
+</tr>
+<tr>
+<td>sizeof</td>
+<td>计算数据类型或变量长度（即所占字节数）</td>
+</tr>
+<tr>
+<td>static</td>
+<td>声明静态变量</td>
+</tr>
+<tr>
+<td>struct</td>
+<td>声明结构体类型</td>
+</tr>
+<tr>
+<td>switch</td>
+<td>用于开关语句</td>
+</tr>
+<tr>
+<td>typedef</td>
+<td>用以给数据类型取别名</td>
+</tr>
+<tr>
+<td>unsigned</td>
+<td>声明无符号类型变量或函数</td>
+</tr>
+<tr>
+<td>union</td>
+<td>声明共用体类型</td>
+</tr>
+<tr>
+<td>void</td>
+<td>声明函数无返回值或无参数，声明无类型指针</td>
+</tr>
+<tr>
+<td>volatile</td>
+<td>说明变量在程序执行中可被隐含地改变</td>
+</tr>
+<tr>
+<td>while</td>
+<td>循环语句的循环条件</td>
+</tr>
+</tbody></table>
+<h2 id="🕸️-C语言中的空格"><a href="#🕸️-C语言中的空格" class="headerlink" title="🕸️ C语言中的空格"></a>🕸️ C语言中的空格</h2><p>只包含空格的行，被称为空白行，可能带有注释，C编译器会完全忽略它。</p>
+<p>在C中，空格用于描述空白符、制表符、换行符和注释。空格分隔语句的各个部分，让编译器能识别语句中的某个元素（比如<code>int</code>）在哪里结束，下一个元素在哪里开始。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-type">int</span> number1 = <span class="hljs-number">0</span>;  <span class="hljs-comment">// 局部变量</span><br><span class="hljs-type">int</span> number2 = <span class="hljs-number">0</span>;  <span class="hljs-comment">// 局部变量</span><br><span class="hljs-type">int</span> sum = number1 + number2;  <span class="hljs-comment">// 局部变量</span><br></code></pre></td></tr></table></figure>
 
-<h2 id="📝-Explain"><a href="#📝-Explain" class="headerlink" title="📝 Explain"></a>📝 Explain</h2><ol>
-<li><p><code>#include&lt;stdio.h&gt;</code></p>
-<ul>
-<li><code>#include</code>是一个预处理命令，用来引入头文件</li>
-<li><code>stdio.h</code>是一个头文件（标准输入输出文件）</li>
-</ul>
-<p> 简单来说，头文件相当于一个工具箱，我们选择需要使用的工具箱，这样就可以在我们之后的工作（代码）中进行使用</p>
-</li>
-<li><p><code>int main() &#123;&#125;</code></p>
-<ul>
-<li><code>int</code>表示该<code>main()</code>函数的返回类型是整型数据，在数据类型以及函数章节会详细介绍。</li>
-<li><code>main()</code>表示一个名为<code>main</code>的函数，在函数章节会函数章节会详细介绍。</li>
-<li><code>&#123;&#125;</code>表示函数的代码块，描述的是函数的功能</li>
-</ul>
-<p> &#x3D;&#x3D;提醒：在C语言中，所有的程序都要包含<code>main()</code>函数，代码从<code>main</code>函数执行。&#x3D;&#x3D;</p>
-</li>
-<li><p><code>/*Here is my code*/</code></p>
-<ul>
-<li><code>/**/</code>包含的是注释说明，程序不会执行，可以有效提高代码的可读性。</li>
-</ul>
-</li>
-<li><p><code>printf(&quot;Hello World!\n&quot;);</code></p>
-<ul>
-<li><p><code>printf()</code>函数在<code>stdio.h</code>头文件中声明，用于格式化输出到屏幕。</p>
-</li>
-<li><p><code>&quot;Hello World!\n&quot;</code>是一串字符串，<code>\n</code>是转义字符，表示换行。</p>
-</li>
-<li><p>在C语言中，每个语句都要使用语句结束符（分号<code>;</code>）作为结束标志。</p>
-</li>
-<li><p><code>retrun 0;</code>对应返回类型。在这里，返回类型是<code>int</code>，所以返回一个0表示退出程序。</p>
-</li>
-</ul>
-</li>
-</ol>
-<h2 id="📽️-History"><a href="#📽️-History" class="headerlink" title="📽️ History"></a>📽️ History</h2><p>C语言是一门通用的、过程式编程语言，由美国计算机科学家Dennis Ritchie于1972年至1973年之间在贝尔实验室（Bell Labs）设计和实现。以下是C语言的主要历史里程碑：</p>
-<ol>
-<li><strong>起源和发展：</strong> C语言的设计始于1969年，当时Dennis Ritchie和Ken Thompson在贝尔实验室为新的Unix操作系统开发一种新的高级编程语言。C语言是由B语言演变而来，而B语言又是由BCPL语言演变而来。因此，C语言继承了一些B语言的特性，但也引入了新的概念和语法。</li>
-<li><strong>发布：</strong> C语言首次正式亮相是在1972年，当时Dennis Ritchie与Brian Kernighan合作，在《贝尔系统技术杂志》上发表了一篇名为《The C Programming Language》的文章，介绍了C语言的基本概念和语法。</li>
-<li><strong>C语言的标准化：</strong> 随着C语言的发展，为了促进跨平台和可移植性，于1983年发布了第一个C语言标准，即ANSI C（American National Standards Institute C）。后来，国际标准化组织（ISO）也发布了与ANSI C兼容的标准，被称为ISO C。</li>
-<li><strong>流行和广泛应用：</strong> 由于其简洁、高效和可移植的特性，C语言在计算机科学领域变得非常流行。它成为了许多系统软件、嵌入式系统和底层编程的首选语言。许多其他编程语言（如C++、Objective-C、C#等）都受到了C语言的影响。</li>
-<li><strong>发展为C++：</strong> 在C语言的基础上，Bjarne Stroustrup于1983年推出了C++，将面向对象编程的概念引入了C语言，使之成为一门更为强大和灵活的编程语言。</li>
-</ol>
-<p>C语言的影响深远，它不仅是许多其他编程语言的基础，而且仍然在系统编程、嵌入式系统和底层开发领域保持着强大的地位。</p>
+<div class="note note-primary">
+            <p>其中<code>int number1</code>间的空格是为了分割语句，同样的还有<code>int number2</code>和<code>int sum</code>。</p><p>而<code>number1 = 0</code>间的空格是为了增加代码可读性，适当加一些空格。一般会间隔一个空格，同样的还有<code>number2 = 0</code>、<code>sum = number1 + number2</code>和<code>  // 局部变量</code>。</p>
+          </div>
 
                 
               </div>
@@ -429,8 +544,6 @@
       
         <a href="/tags/Programming/" class="print-no-link">#Programming</a>
       
-        <a href="/tags/Hello-World/" class="print-no-link">#Hello World</a>
-      
     </div>
   
 </div>
@@ -441,8 +554,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>C Language Says Hello World</div>
-      <div>http://example.com/2023/12/18/CHelloWorld/</div>
+      <div>C语言的基本语法</div>
+      <div>http://example.com/2023/12/21/C语言的基本语法/</div>
     </div>
     <div class="license-meta">
       
@@ -454,13 +567,13 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年12月18日</div>
+          <div>2023年12月21日</div>
         </div>
       
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2023年12月20日</div>
+          <div>2023年12月21日</div>
         </div>
       
       
@@ -491,18 +604,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/12/21/C%E8%AF%AD%E8%A8%80%E7%9A%84%E7%A8%8B%E5%BA%8F%E7%BB%93%E6%9E%84/" title="C语言的程序结构">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">C语言的程序结构</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/12/18/HexoHelloWorld/" title="Hello World">
-                        <span class="hidden-mobile">Hello World</span>
+                      <a href="/2023/12/21/C%E8%AF%AD%E8%A8%80%E7%9A%84%E7%A8%8B%E5%BA%8F%E7%BB%93%E6%9E%84/" title="C语言的程序结构">
+                        <span class="hidden-mobile">C语言的程序结构</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
