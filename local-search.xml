@@ -4,6 +4,35 @@
   
   
   <entry>
+    <title>C语言的数据类型</title>
+    <link href="/2023/12/23/C%E8%AF%AD%E8%A8%80%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/"/>
+    <url>/2023/12/23/C%E8%AF%AD%E8%A8%80%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</url>
+    
+    <content type="html"><![CDATA[<h1 id="🗿-数据类型"><a href="#🗿-数据类型" class="headerlink" title="🗿 数据类型"></a>🗿 数据类型</h1><p>C语言中主要有如下几种类型的数据：</p><ul><li><strong>基本数据类型：</strong>属于算术类型<ul><li><em><strong>整型（int）：</strong></em>用于表示整数，可以是正数、负数或零</li><li><em><strong>字符型（char）：</strong></em>用于表示单个字符，通常存储ASCII码</li><li><em><strong>浮点型（float）：</strong></em>用于表示带有小数部分的实数</li><li><em><strong>双精度浮点型（double）：</strong></em>提供更高的精度，用于表示更大范围的实数</li></ul></li><li><strong>枚举类型（enum）：</strong>允许为整数赋予更有意义的名字</li><li><strong>空类型（void）：</strong>表示没有值的数据类型，常用于函数返回类型和指针类型</li><li><strong>派生类型：</strong>包括数组、指针和结构体类型<ul><li><em><strong>数组（array）：</strong></em>用于存储相同类型的元素的集合</li><li><em><strong>指针（pointer）：</strong></em>存储变量的地址，提供对内存的直接访问</li><li><em><strong>结构体（struct）：</strong></em>允许将不同类型的变量组合在一起形成一个新的数据类型</li><li><em><strong>共用体（union）：</strong></em>允许在相同的内存位置存储不同类型的数据</li></ul></li></ul><blockquote><p>C语言的灵活性允许程序员根据需要选择适当的数据类型。在使用这些数据类型时，程序员需要考虑数据的范围、精度和内存占用等因素。</p><p><em><strong>数据类型可以表示的数据范围和操作系统位数有关，在“计算机组成原理”中会深入介绍。</strong></em></p><p><code>bit</code>表示比特，<code>byte</code>表示字节，1字节等于8比特。</p></blockquote><h2 id="✏️-整数类型（整型）"><a href="#✏️-整数类型（整型）" class="headerlink" title="✏️ 整数类型（整型）"></a>✏️ 整数类型（整型）</h2><table><thead><tr><th align="center">类型</th><th align="center">存储大小</th><th align="center">值的范围</th></tr></thead><tbody><tr><td align="center">char</td><td align="center">1byte</td><td align="center">-2^7^ ~ 2^7^-1或0 ～ 2^8^-1</td></tr><tr><td align="center">unsigned char</td><td align="center">1byte</td><td align="center">0 ～ 2^8^-1</td></tr><tr><td align="center">signed char</td><td align="center">1byte</td><td align="center">-2^7^ ～ 2^7^-1</td></tr><tr><td align="center">int</td><td align="center">2或4byte</td><td align="center">-2^15^ ~ 2^15^-1或-2^31^ ~ 2^31^</td></tr><tr><td align="center">unsigned int</td><td align="center">2或4byte</td><td align="center">0 ~ 2^16^-1或0 ～ 2^31^-1</td></tr><tr><td align="center">short</td><td align="center">2byte</td><td align="center">-2^15^ ~ 2^15^-1</td></tr><tr><td align="center">unsigned short</td><td align="center">2byte</td><td align="center">0 ~ 2^16^-1</td></tr><tr><td align="center">long</td><td align="center">4byte</td><td align="center">-2^31^ ~ 2^31^</td></tr><tr><td align="center">unsigned long</td><td align="center">4byte</td><td align="center">0 ～ 2^31^-1</td></tr></tbody></table><h2 id="✏️-浮点类型"><a href="#✏️-浮点类型" class="headerlink" title="✏️ 浮点类型"></a>✏️ 浮点类型</h2><table><thead><tr><th align="center">类型</th><th align="center">存储大小</th><th align="center">值范围</th><th align="center">精度</th></tr></thead><tbody><tr><td align="center">float</td><td align="center">4byte</td><td align="center">1.2E-38 ~ 3.4E+38</td><td align="center">6位有效位</td></tr><tr><td align="center">double</td><td align="center">8byte</td><td align="center">2.3E-308 ~ 1.7E+308</td><td align="center">15 位有效位</td></tr><tr><td align="center">long double</td><td align="center">16byte</td><td align="center">3.4E-4932 到 1.1E+4932</td><td align="center">19 位有效位</td></tr></tbody></table><h2 id="✏️-空类型（void）"><a href="#✏️-空类型（void）" class="headerlink" title="✏️ 空类型（void）"></a>✏️ 空类型（void）</h2><p>空类型指定没有可用的值。通常用于以下三种情况：</p><ul><li>函数返回值为空</li></ul><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-type">void</span> <span class="hljs-title function_">Hello</span><span class="hljs-params">(<span class="hljs-type">char</span> word)</span>;<br></code></pre></td></tr></table></figure><ul><li>函数参数为空</li></ul><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-type">void</span> <span class="hljs-title function_">Hello</span><span class="hljs-params">(<span class="hljs-type">void</span>)</span>;<br></code></pre></td></tr></table></figure><ul><li>指针指向<code>void</code></li></ul><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-type">void</span> *hello;<br></code></pre></td></tr></table></figure><h2 id="📝-类型转换"><a href="#📝-类型转换" class="headerlink" title="📝 类型转换"></a>📝 类型转换</h2><p>类型转换是将一个数据类型的值转换为另一种数据类型的值。</p><p>C语言中有两种类型转换：</p><ul><li><strong>隐式类型转换（自动类型转换）：</strong><ul><li>在表达式中，当不同类型的数据混合在一起时，C语言会自动进行隐式类型转换，将其中的一种类型转换为另一种类型。</li><li>通常，隐式类型转换会遵循一定的规则，例如，将小类型转换为大类型，避免精度丢失。</li></ul></li></ul><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-type">int</span> a = <span class="hljs-number">2</span>;  <span class="hljs-comment">// int整型数据</span><br><span class="hljs-type">float</span> b = <span class="hljs-number">2.5</span>;  <span class="hljs-comment">// float浮点型数据</span><br><span class="hljs-type">float</span> result = a + b;  <span class="hljs-comment">// int -&gt; float (float类型更大)</span><br></code></pre></td></tr></table></figure><ul><li><strong>显式类型转换（强制类型转换）：</strong><ul><li>程序员可以使用强制类型转换来显式地将一个数据类型转换为另一个数据类型，这通常用于需要更精确控制类型转换的情况。</li><li>使用强制类型转换时，将目标类型放在要转换的值之前，并使用括号括起来。</li></ul></li></ul><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-type">double</span> pi = <span class="hljs-number">3.141592653589793</span>;  <span class="hljs-comment">// float浮点型数据</span><br><span class="hljs-type">int</span> pi_int = (<span class="hljs-type">int</span>)pi; <span class="hljs-comment">// 强制转换为int整型数据</span><br></code></pre></td></tr></table></figure><div class="note note-primary">            <p>在进行显式类型转换时，需要谨慎处理，因为它可能导致精度丢失或其他问题。确保了解源类型和目标类型之间的差异，并在转换时谨慎使用。</p>          </div><p><em><strong>总体而言，隐式类型转换在某些情况下会更方便，但在需要精确控制的情况下，显式类型转换是更好的选择。</strong></em></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>C Language</category>
+      
+      <category>基础知识</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>C Language</tag>
+      
+      <tag>Programming</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Hello World</title>
     <link href="/2023/12/21/HexoHelloWorld/"/>
     <url>/2023/12/21/HexoHelloWorld/</url>
