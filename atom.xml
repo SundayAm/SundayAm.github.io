@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2023-12-23T15:24:25.935Z</updated>
+  <updated>2023-12-24T16:24:17.185Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>C语言的存储类</title>
+    <link href="http://example.com/2023/12/25/C%E8%AF%AD%E8%A8%80%E7%9A%84%E5%AD%98%E5%82%A8%E7%B1%BB/"/>
+    <id>http://example.com/2023/12/25/C%E8%AF%AD%E8%A8%80%E7%9A%84%E5%AD%98%E5%82%A8%E7%B1%BB/</id>
+    <published>2023-12-24T16:24:17.000Z</published>
+    <updated>2023-12-24T16:24:17.185Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="🗿-存储类"><a href="#🗿-存储类" class="headerlink" title="🗿 存储类"></a>🗿 存储类</h1><p>在C语言中，存储类是指变量或函数的存储属性，即它们在内存中的存储位置和生命周期。<br>主要有以下几种存储类：</p><ul><li><strong>auto</strong></li><li><strong>register</strong></li><li><strong>static</strong></li><li><strong>extern</strong></li><li><strong>typedef</strong></li></ul><h2 id="🍫-auto存储类"><a href="#🍫-auto存储类" class="headerlink" title="🍫 auto存储类"></a>🍫 auto存储类</h2><p><code>auto</code>存储类是默认的存储类，用于定义局部变量。它在函数内定义的变量默认是auto存储类。</p><blockquote><p>局部变量是只在函数内有效的，这意味着它们在函数开始时被创建，在函数结束时被销毁。</p></blockquote><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-type">void</span> <span class="hljs-title function_">exampleFunction</span><span class="hljs-params">()</span> <br>&#123;<br>    <span class="hljs-keyword">auto</span> <span class="hljs-type">int</span> localVar;  <span class="hljs-comment">// auto 是默认的存储类</span><br>&#125;<br></code></pre></td></tr></table></figure><h2 id="🍭-register存储类"><a href="#🍭-register存储类" class="headerlink" title="🍭 register存储类"></a>🍭 register存储类</h2><p><code>register</code>存储类用于定义存储在寄存器中而不是RAM中的局部变量。它提供了对寄存器的直接访问，以加快程序的执行速度。</p><blockquote><p>因为是存储在寄存器中，所以没有内存地址，不能进行‘&amp;’运算。往往用于一些需要频繁访问的变量来提高程序运行效率。</p></blockquote><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-type">void</span> <span class="hljs-title function_">exampleFunction</span><span class="hljs-params">()</span> <br>&#123;<br>    <span class="hljs-keyword">register</span> <span class="hljs-type">int</span> count;  <span class="hljs-comment">// 请求将变量存储在寄存器中</span><br>&#125;<br></code></pre></td></tr></table></figure><h2 id="🍿-static存储类"><a href="#🍿-static存储类" class="headerlink" title="🍿 static存储类"></a>🍿 static存储类</h2><p><code>static</code>存储类用于定义局部变量和全局变量。局部变量使用 static 存储类时，其生命周期会延长到整个程序的执行周期,不会在每次它进入和离开作用域时进行创建和销毁。而使用static修饰全局变量时，会使变量的作用域限制在声明它的文件内。全局声明的一个 static 变量或方法可以被任何函数或方法调用，只要这些方法出现在跟 static 变量或方法同一个文件中。</p><blockquote><p>静态变量在程序中只被初始化一次，即使函数被调用多次，该变量的值也不会重置。</p></blockquote><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-type">void</span> <span class="hljs-title function_">exampleFunction</span><span class="hljs-params">()</span> <br>&#123;<br>    <span class="hljs-type">static</span> <span class="hljs-type">int</span> localVar;  <span class="hljs-comment">// 局部变量使用 static 存储类</span><br>&#125;<br><br><span class="hljs-type">static</span> <span class="hljs-type">int</span> globalVar;  <span class="hljs-comment">// 全局变量使用 static 存储类</span><br></code></pre></td></tr></table></figure><h2 id="🍦-extern存储类"><a href="#🍦-extern存储类" class="headerlink" title="🍦 extern存储类"></a>🍦 extern存储类</h2><p><code>extern</code>存储类用于提供对全局变量的引用，而这些全局变量存储在其他文件中。当使用 extern 关键字时，不会为变量分配任何存储空间，而只是指示编译器该变量在其他文件中定义。</p><blockquote><p>extern存储类用于提供一个全局变量的引用，全局变量对所有的程序文件都是可见的。当您使用 extern时，对于无法初始化的变量，会把变量名指向一个之前定义过的存储位置。<br>当您有多个文件且定义了一个可以在其他文件中使用的全局变量或函数时，可以在其他文件中使用extern来得到已定义的变量或函数的引用。<strong>可以这么理解，extern 是用来在另一个文件中声明一个全局变量或函数。</strong></p></blockquote><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-keyword">extern</span> <span class="hljs-type">int</span> globalVar;  <span class="hljs-comment">// 声明全局变量，告诉编译器它在其他文件中定义</span><br></code></pre></td></tr></table></figure><h2 id="🍰-typedef存储类"><a href="#🍰-typedef存储类" class="headerlink" title="🍰 typedef存储类"></a>🍰 typedef存储类</h2><p><code>typedef</code>存储类用于创建新的数据类型名称。它提供了对数据类型的更直观和更易读的方式。</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-keyword">typedef</span> <span class="hljs-type">int</span> Integer;  <span class="hljs-comment">// 使用 typedef 创建新的数据类型 Integer</span><br></code></pre></td></tr></table></figure><p><strong>这些存储类允许程序员灵活地控制变量的存储位置和生命周期，以满足不同的编程需求。</strong>在实操时会进一步理解，现在可以简单了解。</p>]]></content>
+    
+    
+    <summary type="html">在这篇文章里，笔者将会介绍C语言的存储类。存储类是指变量或函数的存储属性，即它们在内存中的存储位置和生命周期。</summary>
+    
+    
+    
+    <category term="C Language" scheme="http://example.com/categories/C-Language/"/>
+    
+    <category term="基础知识" scheme="http://example.com/categories/C-Language/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
+    
+    
+    <category term="C Language" scheme="http://example.com/tags/C-Language/"/>
+    
+    <category term="Programming" scheme="http://example.com/tags/Programming/"/>
+    
+  </entry>
   
   <entry>
     <title>C语言的变量和常量</title>
